@@ -1,0 +1,157 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/about.css";
+---
+
+<Layout title="About">
+  <section class="about-section">
+    <div class="statement-wrap">
+      <h2 class="statement-title">
+        trying to be better
+        <br />
+        than yesterday.
+      </h2>
+    </div>
+
+    <div class="about-wrapper">
+      <p class="about-text">
+        My name is Albi, a graphic designer based in Indonesia with a growing
+        interest in web development and digital experiences. I enjoy creating
+        work that feels simple, intentional, and meaningful—whether it's a
+        visual identity, an interface, or a small interaction on a screen. Most
+        of my time is spent exploring ideas, refining details, learning through
+        experimentation, and slowly building my own way of thinking about
+        design. I'm not chasing perfection, just trying to make better work than
+        I did yesterday.
+      </p>
+    </div>
+  </section>
+
+  <section class="capabilities-section">
+    <div class="capabilities-wrapper">
+      <div class="capabilities-label">
+        <p>Capabilities</p>
+      </div>
+
+      <div class="capabilities-list">
+        <p>Graphic Design</p>
+        <p>Brand Identity</p>
+        <p>UI / UX Design</p>
+        <p>Frontend Development</p>
+        <p>Creative Coding</p>
+        <p>Typography</p>
+        <p>Visual Systems</p>
+        <p>Motion Design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE LIST -->
+  <section class="experience-list">
+    <article class="experience-item" data-scroll>
+      <div class="experience-year">2025 — 2026</div>
+      <div class="experience-body">
+        <h3>CTRL P</h3>
+        <span class="role">Graphic Designer</span>
+        <p>
+          Print production. Promotional materials. Color accuracy. Client
+          revisions. Real-world constraints that no tutorial teaches you.
+        </p>
+      </div>
+    </article>
+
+    <article class="experience-item offset" data-scroll>
+      <div class="experience-year">2023 — 2024</div>
+      <div class="experience-body">
+        <h3>Kharisma TV</h3>
+        <span class="role">Graphic Design Intern</span>
+        <p>
+          Broadcast graphics. Motion assets. Fast iterations. Team
+          collaboration. Deadlines measured in hours, not days.
+        </p>
+      </div>
+    </article>
+
+    <article class="experience-item" data-scroll>
+      <div class="experience-year">2023 — Present</div>
+      <div class="experience-body">
+        <h3>Freelance</h3>
+        <span class="role">Graphic Designer</span>
+        <p>
+          Posters. Social media. Community events. Small businesses. Local
+          brands. Where I discovered that every client is different.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section class="contact">
+    <div class="contact-container">
+      <h2 class="contact-title">Got an idea?</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div>
+            <span class="contact-label">BASED</span>
+            <p>Indonesia</p>
+          </div>
+
+          <div>
+            <span class="contact-label">AVAILABLE</span>
+            <p>
+              Open to Opportunities<br />
+              Full-Time · Freelance
+            </p>
+          </div>
+
+          <div>
+            <span class="contact-label">CONTACT</span>
+
+            <a href="mailto:aoezary@gmail.com" class="contact-mail">
+              Gmail: aoezary@gmail.com
+            </a>
+
+            <a
+              href="https://wa.me/6281807881170"
+              class="contact-mail"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp : +62 818-0788-1170
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <h3>
+            Have something<br />
+            in mind?
+          </h3>
+
+          <a href="mailto:aoezary@gmail.com" class="contact-email">
+            Send an email →
+          </a>
+
+          <div class="contact-socials">
+            <a href="https://instagram.com/albioezary" target="_blank">
+              Instagram
+            </a>
+
+            <a href="https://behance.net/albioezary" target="_blank">
+              Behance
+            </a>
+
+            <a href="https://github.com/albioezary" target="_blank"> GitHub </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("astro:page-load", async () => {
+      const m = await import("../scripts/animations/about");
+      m.initHomeAnimations();
+    });
+  </script>
+</Layout>

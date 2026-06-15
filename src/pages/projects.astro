@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/work.css";
+
+const projects = [
+  {
+    title: "EKKO - Branding Design",
+    category: "Branding",
+    year: "2025",
+    image: "public/archive/ekko9.png",
+    url: "https://www.behance.net/gallery/250236655/EKKO-Record-Strore-Branding-Design",
+  },
+
+  {
+    title: "Brighton - Rebrand Social Media ",
+    category: "Branding",
+    year: "2025",
+    image: "public/archive/brighton.png",
+    url: "https://www.behance.net/gallery/249189313/Brighton-FC-Social-Media-Rebrand",
+  },
+
+  {
+    title: "Running Club Branding",
+    category: "Branding",
+    year: "2024",
+    image: "public/archive/sss.png",
+    url: "https://www.behance.net/gallery/249278937/5TO9-Running-Club-Branding",
+  },
+
+  {
+    title: "Burger Branding Design",
+    category: "Branding",
+    year: "2024",
+    image: "public/archive/berger.png",
+    url: "https://www.behance.net/gallery/248759035/Burger-Berger-Branding",
+  },
+
+  {
+    title: "Trope - Branding Design",
+    category: "Branding",
+    year: "2024",
+    image: "public/archive/trope.png",
+    url: "https://www.behance.net/gallery/248904405/Trope-Branding-Design",
+  },
+
+  {
+    title: "Rawdivision - Branding Design",
+    category: "Branding Design",
+    year: "2024",
+    image: "public/archive/rwdvsn.png",
+    url: "https://www.behance.net/gallery/249481797/RAWDIVISON-GARAGE-Branding-Identity-Design",
+  },
+
+  {
+    title: "Coffee Shop Branding",
+    category: "Branding Design",
+    year: "2024",
+    image: "public/archive/kopiabah.png",
+    url: "https://www.behance.net/gallery/249116347/KOPI-ABAH-Branding-Project-Design",
+  },
+
+  {
+    title: "Rebrand Social Media",
+    category: "Branding Design",
+    year: "2024",
+    image: "public/archive/nufca.png",
+    url: "https://www.behance.net/gallery/250006219/Newcastle-United-Rebranding-Social-Media",
+  },
+
+  {
+    title: "Madura united Scoial Media Rebranding ",
+    category: "Rebranding Design",
+    year: "2024",
+    image: "public/archive/madura.png",
+    url: "https://www.behance.net/gallery/248968043/Madura-United-Rebranding-Social-Media",
+  },
+
+  {
+    title: "Poster Series",
+    category: "Graphic Design",
+    year: "2024",
+    image: "public/archive/balbalan.png",
+    url: "https://www.behance.net/gallery/249332079/Football-Poster",
+  },
+];
+---
+
+<Layout title="Archive">
+  <section class="archive">
+    <div class="archive-header">
+      <h1>
+        Selected work, experiments and
+        <br />
+        visual explorations.
+      </h1>
+    </div>
+
+    <div class="archive-filters">
+      <button>All</button>
+      <button>Brand Identity</button>
+      <button>Frontend</button>
+      <button>UI / UX</button>
+      <button>Graphic Design</button>
+    </div>
+
+    <div class="archive-grid">
+      {
+        projects.map((project) => (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="archive-card"
+          >
+            <img src={project.image} alt={project.title} />
+
+            <div class="archive-overlay">
+              <h3>{project.title}</h3>
+
+              <div class="archive-meta">
+                <span>{project.category}</span>
+                <span>{project.year}</span>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

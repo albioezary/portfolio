@@ -1,0 +1,55 @@
+---
+const currentPath = Astro.url.pathname;
+import "../styles/navbar.css";
+---
+
+<nav class="navbar">
+  <!-- LEFT -->
+  <div class="nav-left">
+    <a href="/" class={currentPath === "/" ? "active" : ""}> HOME </a>
+  </div>
+
+  <!-- CENTER -->
+  <div class="nav-center">
+    <a href="/about" class={currentPath === "/about" ? "active" : ""}>
+      ABOUT
+    </a>
+
+    <a href="/projects" class={currentPath === "/projects" ? "active" : ""}>
+      ARCHIVE
+    </a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+    <button class="contact-btn" aria-label="Contact Links"> CONTACT </button>
+
+    <div class="contact-dropdown">
+      <a
+        href="https://github.com/albioezary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GITHUB ↗
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/albi-oezary-356b43316/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LINKEDIN ↗
+      </a>
+
+      <a
+        href="https://instagram.com/albioezary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        INSTAGRAM ↗
+      </a>
+
+      <a href="mailto:aoezary@gmail.com"> EMAIL ↗ </a>
+    </div>
+  </div>
+</nav>

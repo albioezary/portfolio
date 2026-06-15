@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  overflow:hidden;
+}
+
+body {
+  font-family: "Stack Sans Headline", sans-serif;
+  background: #0e0e0e;
+  color: white;
+  overflow-x: hidden;
+}

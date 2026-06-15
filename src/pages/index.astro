@@ -1,11 +1,206 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import "../styles/home.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const works = [
+  {
+    number: "01",
+    title: "Music Store Branding",
+    year: "2025",
+    image: "public/ekko.png",
+    link: "https://www.behance.net/gallery/250236655/EKKO-Record-Strore-Branding-Design",
+  },
+  {
+    number: "02",
+    title: "Running Club Branding",
+    year: "2026",
+    image: "public/5to9.png",
+    link: "https://www.behance.net/gallery/249278937/5TO9-Running-Club-Branding",
+  },
+  {
+    number: "03",
+    title: "Coffee Shop Branding",
+    year: "2025",
+    image: "public/kopi.png",
+    link: "https://www.behance.net/gallery/249116347/KOPI-ABAH-Branding-Project-Design",
+  },
+  {
+    number: "04",
+    title: "Social Media Rebrand",
+    year: "2024",
+    image: "public/nufc.png",
+    link: "https://www.behance.net/gallery/250006219/Newcastle-United-Rebranding-Social-Media",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Albi Portfolio">
+  <section class="hero">
+    <div class="overlay-content">
+      <div class="role">
+        <div class="line-mask">
+          <p>GRAPHIC DESIGNER</p>
+        </div>
+
+        <div class="line-mask">
+          <p>UI/UX DESIGNER</p>
+        </div>
+
+        <div class="line-mask">
+          <p>ASPIRING DEVELOPER</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bigname-wrapper">
+      <h1 class="bigname">ALBIOEZARY</h1>
+
+      <p class="mobile-intro">
+        I like making things that feel right. Sometimes that's a visual
+        identity, sometimes it's a website, and sometimes it's me spending three
+        hours moving a button by two pixels. Worth it, though.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("astro:page-load", async () => {
+      const m = await import("../scripts/animations/home");
+      m.initHomeAnimations();
+    });
+  </script>
+
+  <section class="aboutme" id="about">
+    <div class="about-content">
+      <div class="about-left">
+        <h2>Trying to make good things, one project at a time.</h2>
+
+        <p class="about-intro">
+          Graphic designer based in Indonesia, currently exploring front-end
+          development and motion design. Always curious, always experimenting,
+          and always looking for better ways to turn ideas into something people
+          actually remember.
+        </p>
+
+        <a href="/about" class="about-cta">
+          More about me <span>→</span>
+        </a>
+      </div>
+
+      <div class="about-right">
+        <div class="about-block">
+          <span>FOCUS</span>
+          <p>
+            Brand Identity<br />
+            Visual Design<br />
+            Typography<br />
+            UI Design
+          </p>
+        </div>
+
+        <div class="about-block">
+          <span>CURRENTLY</span>
+          <p>
+            Learning Front-End<br />
+            Exploring Motion<br />
+            Open to Opportunities
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="works">
+    <div class="works-list">
+      {
+        works.map((work) => (
+          <a
+            href={work.link || "#"}
+            class="work-item"
+            target={work.link?.startsWith("http") ? "_blank" : "_self"}
+            rel={
+              work.link?.startsWith("http") ? "noopener noreferrer" : undefined
+            }
+          >
+            <img src={work.image} alt={work.title} class="work-bg" />
+
+            <div class="work-overlay" />
+
+            <span class="work-number">{work.number}</span>
+
+            <h2 class="work-title">{work.title}</h2>
+
+            <span class="work-year">{work.year}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="works-footer">
+      <a href="/projects" class="works-btn"> Explore Archive → </a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-container">
+      <h2 class="contact-title">Got an idea?</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div>
+            <span class="contact-label">BASED</span>
+            <p>Indonesia</p>
+          </div>
+
+          <div>
+            <span class="contact-label">AVAILABLE</span>
+            <p>
+              Open to Opportunities<br />
+              Full-Time · Freelance
+            </p>
+          </div>
+
+          <div>
+            <span class="contact-label">CONTACT</span>
+
+            <a href="mailto:aoezary@gmail.com" class="contact-mail">
+              Gmail: aoezary@gmail.com
+            </a>
+
+            <a
+              href="https://wa.me/6281807881170"
+              class="contact-mail"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp : +62 818-0788-1170
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <h3>
+            Have something<br />
+            in mind?
+          </h3>
+
+          <a href="mailto:aoezary@gmail.com" class="contact-email">
+            Send an email →
+          </a>
+
+          <div class="contact-socials">
+            <a href="https://instagram.com/albioezary" target="_blank">
+              Instagram
+            </a>
+
+            <a href="https://behance.net/albioezary" target="_blank">
+              Behance
+            </a>
+
+            <a href="https://github.com/albioezary" target="_blank"> GitHub </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
