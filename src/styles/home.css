@@ -50,6 +50,7 @@
   font-family: "Anton", sans-serif;
   font-size: clamp(5rem, 24.7vw, 25.7rem);
   letter-spacing: -0.03em;
+  font-weight: 400;
   color: white;
   text-transform: uppercase;
   user-select: none;
