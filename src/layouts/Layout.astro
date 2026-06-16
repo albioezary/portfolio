@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/navbar.astro";
-import "../scripts/scroll";
 
 import { ClientRouter } from "astro:transitions";
 
@@ -12,10 +11,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html>
+<ClientRouter />
+
 <html lang="en">
   <head>
-    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -26,8 +25,8 @@ const { title } = Astro.props;
       content="Portfolio of Albi - Graphic Designer, UI/UX Designer & Front-End Learner"
     />
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
@@ -36,16 +35,13 @@ const { title } = Astro.props;
     />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+    <!-- Icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
@@ -56,5 +52,10 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
+
+    <!-- ✅ CLIENT-SIDE ONLY SCRIPT -->
+    <script>
+      import("../scripts/scroll");
+    </script>
   </body>
 </html>

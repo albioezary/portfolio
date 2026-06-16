@@ -27,17 +27,13 @@ export function initHomeAnimations() {
     ".statement-title",
     {
       clipPath: "inset(100% 0 0 0)",
-      yPercent: 25,
-      opacity: 0.8,
-      filter: "blur(2px)",
+      y: 20,
     },
     {
       clipPath: "inset(0% 0 0 0)",
-      yPercent: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 0.9,
-      ease: EASE,
+      y: 0,
+      duration: 1,
+      ease: "expo.out",
     },
   )
 
