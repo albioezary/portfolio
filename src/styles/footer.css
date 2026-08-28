@@ -1,0 +1,286 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+  width: 100%;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 90px;
+  padding-top: 60px;
+  padding-right: 100px;
+  padding-bottom: 80px;
+  padding-left: 100px;
+
+  overflow: hidden;
+}
+.footer-inner {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+}
+
+/* ==========================================
+   MAIN GRID
+========================================== */
+
+.footer-grid {
+  min-height: 62vh;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(290px, 0.28fr);
+  align-items: center;
+  column-gap: clamp(4rem, 10vw, 12rem);
+}
+
+/* ==========================================
+   LEFT / COPY
+========================================== */
+
+.footer-copy {
+  min-width: 0;
+}
+
+.footer-eyebrow {
+  margin: 0 0 2rem;
+
+  font-size: 0.62rem;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-heading {
+  margin: 0;
+
+  font-size: clamp(4.5rem, 8.5vw, 9rem);
+  font-weight: 500;
+
+  line-height: 0.82;
+  letter-spacing: -0.085em;
+
+  color: #fff;
+}
+
+/* ==========================================
+   RIGHT / CONTACT
+========================================== */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.5rem;
+}
+
+.contact-block,
+.social-block {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.65rem;
+}
+
+.contact-label {
+  font-size: 0.55rem;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   CONTACT LINKS
+========================================== */
+
+.contact-block > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  gap: 1rem;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.contact-block > a span:last-child {
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-block > a:hover {
+  color: #fff;
+}
+
+.contact-block > a:hover span:last-child {
+  color: #fff;
+
+  transform: translate(4px, -4px);
+}
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+
+.social-links {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.social-links svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-links svg path {
+  fill: none;
+}
+
+.social-links svg .social-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-links a:hover {
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .footer-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(220px, 0.4fr);
+
+    column-gap: 4rem;
+  }
+
+  .footer-heading {
+    font-size: clamp(4rem, 9vw, 7rem);
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 5rem 1.5rem;
+  }
+
+  .footer-grid {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    align-content: center;
+
+    gap: 5rem;
+  }
+
+  .footer-heading {
+    font-size: clamp(3.5rem, 16vw, 6rem);
+
+    line-height: 0.84;
+  }
+
+  .footer-contact {
+    width: 100%;
+    max-width: 340px;
+
+    gap: 2.5rem;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .footer-heading {
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .footer-eyebrow {
+    margin-bottom: 1.5rem;
+
+    font-size: 0.58rem;
+  }
+
+  .contact-label {
+    font-size: 0.52rem;
+  }
+
+  .contact-block > a {
+    font-size: 0.82rem;
+  }
+
+  .social-links {
+    gap: 0.85rem;
+  }
+}

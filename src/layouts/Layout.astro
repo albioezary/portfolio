@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
 
 import { ClientRouter } from "astro:transitions";
 
@@ -52,6 +53,8 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
+
+    <Footer />
 
     <!-- ✅ CLIENT-SIDE ONLY SCRIPT -->
     <script>

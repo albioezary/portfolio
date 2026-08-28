@@ -11,7 +11,7 @@ const EASE = "expo.out";
 const START = "top 75%";
 
 /* ========================================
-   HERO
+   HERO / ABOUT / EXPERIENCE / CAPABILITIES
 ======================================== */
 
 export function initHomeAnimations() {
@@ -35,26 +35,24 @@ export function initHomeAnimations() {
       duration: 1,
       ease: "expo.out",
     },
-  )
-
-    .fromTo(
-      ".about-text",
-      {
-        clipPath: "inset(0 0 100% 0)",
-        y: 50,
-        opacity: 0,
-        filter: "blur(2px)",
-      },
-      {
-        clipPath: "inset(0 0 0% 0)",
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.9,
-        ease: EASE,
-      },
-      "-=0.5",
-    );
+  ).fromTo(
+    ".about-text",
+    {
+      clipPath: "inset(0 0 100% 0)",
+      y: 50,
+      opacity: 0,
+      filter: "blur(2px)",
+    },
+    {
+      clipPath: "inset(0 0 0% 0)",
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 0.9,
+      ease: EASE,
+    },
+    "-=0.5",
+  );
 
   const capTl = gsap.timeline({
     scrollTrigger: {
@@ -65,7 +63,6 @@ export function initHomeAnimations() {
   });
 
   capTl
-
     .fromTo(
       ".capabilities-label p",
       {
@@ -77,7 +74,6 @@ export function initHomeAnimations() {
         ease: EASE,
       },
     )
-
     .fromTo(
       ".capabilities-list p",
       {
@@ -111,105 +107,4 @@ export function initHomeAnimations() {
       },
     );
   });
-
-  gsap.fromTo(
-    ".contact-title",
-    {
-      clipPath: "inset(100% 0 0 0)",
-      opacity: 0.85,
-      filter: "blur(1px)",
-    },
-    {
-      clipPath: "inset(0% 0 0 0)",
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 1.2,
-      ease: EASE,
-      scrollTrigger: {
-        trigger: ".contact",
-        start: START,
-        once: true,
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".contact-info > div",
-    {
-      y: 20,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      stagger: 0.12,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".contact-grid",
-        start: START,
-        once: true,
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".contact-cta h3",
-    {
-      clipPath: "inset(100% 0 0 0)",
-      opacity: 0.85,
-      filter: "blur(1px)",
-    },
-    {
-      clipPath: "inset(0% 0 0 0)",
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 1,
-      ease: EASE,
-      scrollTrigger: {
-        trigger: ".contact-grid",
-        start: START,
-        once: true,
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".contact-email",
-    {
-      y: 12,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".contact-grid",
-        start: START,
-        once: true,
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".contact-socials a",
-    {
-      y: 12,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      stagger: 0.08,
-      duration: 0.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".contact-socials",
-        start: START,
-        once: true,
-      },
-    },
-  );
 }
